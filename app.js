@@ -8,9 +8,9 @@ app.use(express.static("public"))
 app.set("view engine","ejs")
 
 let port=process.env.PORT||5000;
-const MONGOD_URI="mongodb+srv://Saran:saran@123@cluster0.zhfzn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const MONGOD_URI="mongodb+srv://Saran:saran@123@cluster0.zhfzn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect(process.env.MONGOD_URI||"mongodb://localhost:27017/hospitalDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOD_URI||"mongodb://localhost:27017/hospitalDB");
 
 
 const userSchema=new mongoose.Schema({

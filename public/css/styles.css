@@ -1,0 +1,63 @@
+.index-back{
+    background-image:url("../pictures/index\ background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.index-ul{
+    background-color: rgba(240, 248, 255, 0.527);
+    margin: 4% 5% 4% 5%;
+}
+.index-specialities{
+    background-color: rgb(243, 192, 209);
+}
+.index-specialities h2{
+    padding-top: 5%;
+    text-align: center;
+}
+.index-specialities ul{
+    margin-left: 40%;
+}
+.index-specialities ul li:last-child{
+    padding-bottom: 5%;
+}
+.sign-back{
+    background-image:url("../pictures/hospital.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.sign-up{
+    margin: 4% 10% 0 10%;
+}
+.sign-up input{
+    margin-top: 3%;
+}
+.sign-up h3{
+    padding-top: 15%;
+}
+.medic-back{
+    background-image:url("../pictures/medical.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.prescription{
+    margin: 0 20% 0 20%;
+    padding: 10% 0 15% 0;
+}
+.ambu-back{
+    background-image:url("../pictures/ambulance.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.ambu{
+    margin: 3% 20% 0 20%;
+    color: white;
+    padding: 6% 0 6% 0;
+}
+.admiss{
+    color: white;
+    margin: 4% 20% 0 20%;
+    padding: 5% 0 10% 0;
+}
+.admiss input,textarea,button{
+    margin-top: 1.5%;
+}

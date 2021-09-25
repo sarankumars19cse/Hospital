@@ -50,9 +50,9 @@
         <h3 style="color: white;">AMBULANCE SERVICE IS AVAILABLE HERE TO MIGRATE HOSPITALS</h3>
         <form action="/ambulance" method="post">
           <p>FROM: <input type="text" class="form-control" value="KARUR HEALTH CARE" readonly name="from"></p>
-          <P>DESTINATION : <input type="text" placeholder="Enter the hospital name for destination" name="to" class="form-control"></P>
-          <p>Enter the time When did you need this service : <input type="time" class="form-control" name="time"></p>
-          <p>ATTENDERS ALLOWED WITH PATIENT : <input type="number" value="1" readonly class="form-control" name="attenders"></p>
+          <P>DESTINATION : <input type="text" placeholder="Enter the hospital name for destination" required name="to" class="form-control"></P>
+          <p>Enter the time When did you need this service : <input type="time" class="form-control" required name="time"></p>
+          <p>ATTENDERS ALLOWED WITH PATIENT : <input type="number" value="1" readonly class="form-control" required name="attenders"></p>
           <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 3%;">PAY AND REGISTER</button>
         </form>
       </div>

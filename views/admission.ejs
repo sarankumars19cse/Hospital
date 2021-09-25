@@ -50,12 +50,12 @@
         <h2 style="text-align: center;">ADMISSION</h2>
         <h5 style="text-align: center;">REGISTER TO BOOK YOUR ADMISSION</h5>
         <form action="/admission" method="POST">
-          <input type="text" placeholder="Patient name" class="form-control" name="patientName">
-          <input type="number" placeholder="Age" class="form-control" name="age">
-          <input type="date" placeholder="Date of Birth" class="form-control" name="dob">
-          <textarea rows="3" class="form-control" placeholder="Address" name="address"></textarea>
-          <input type="text" class="form-control" placeholder="Purpose of Admission" name="purpose">
-          <input type="text" placeholder="Attender Name" class="form-control" name="attenderName">
+          <input required type="text" placeholder="Patient name" class="form-control" name="patientName">
+          <input required type="number" placeholder="Age" class="form-control" name="age">
+          <input required type="date" placeholder="Date of Birth" class="form-control" name="dob">
+          <textarea required rows="3" class="form-control" placeholder="Address" name="address"></textarea>
+          <input required type="text" class="form-control" placeholder="Purpose of Admission" name="purpose">
+          <input required type="text" placeholder="Attender Name" class="form-control" name="attenderName">
           <button type="submit" class="btn btn-primary btn-lg btn-block">PAY AND REGISTER</button>
         </form>
       </div>

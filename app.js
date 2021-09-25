@@ -152,7 +152,7 @@ app.post("/signin",function(req,res){
             }
             else{
                 alert("Incorrect Username")
-                res.redirect("/sigin")
+                res.redirect("/signin")
             }
         }
     })

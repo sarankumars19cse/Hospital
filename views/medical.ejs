@@ -13,47 +13,61 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Spartan:wght@200&display=swap" rel="stylesheet">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .medic-back
+      {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/medical.jpg");
+      }
+    </style>
 </head>
-<body style="overflow-x: hidden;">
-    <div class="medic-back">
-        <nav class="navbar fixed-top nav-tabs navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;">KARUR  HEALTH CARE <i class="fas fa-stethoscope"></i></a>
+<body style="overflow-x: hidden;" class="medic-back">
+    <div style="height: 100vh;">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+      <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">HOME</a>
+              <a class="nav-link mr-3" href="/">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admission">ADMISSION</a>
+              <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ambulance">AMBULANCE</a>
+              <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/medical">MEDICAL</a>
+              <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
             </li>
             <li class="nav-item">
-                <a href="/signin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link" style="border: none;">SIGN IN</button></a>
+              <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
             </li>
-            <li class="nav-item">
-                <a href="/signup" style="text-decoration: none;"><button class="btn btn-outline-info nav-link" style="border: none;">SIGN UP</button></a>
-            </li>
+            <!-- <li class="nav-item">
+                <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
+            </li> -->
           </ul>
         </div>
       </nav>
       <div class="prescription">
-        <a href="/logout" style="margin-left: 117%;"><button type="button" style="margin-top: -10%;" class="btn btn-outline-danger">Logout</button></a>
         <h3 style="color: white;margin-top: 5%;">Place Your Order using prescription</h3>
         <form action="/medical" method="POST">
-          <input type="text" class="form-control" placeholder="doctor name" style="margin-top: 3%;" name="doctorName">
-          <textarea  cols="102" rows="3" style="margin-top: 3%;border-radius: 5px;" placeholder="Hospital address" class="form-control" name="hospitalAddress"></textarea>
-          <h4 style="margin-top: 3%;color: white;">Upload Your prescription</h4>
-          <input type="file" style="margin-top: 3%;color: white;">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 3%;">PAY AND PROCCED</button>
+          <input type="text" class="form-control mt-3" placeholder="Doctor name" name="doctorName">
+          <textarea  cols="102" rows="3" style="border-radius: 5px;" placeholder="Hospital address" class="mt-3 form-control" name="hospitalAddress"></textarea>
+          <h4 style="margin-top: 3%;color: white;" class="mt-3">Upload Your prescription</h4>
+          <input type="file" style="margin-top: 3%;color: white;" class="mt-3">
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-3" style="margin-top: 3%;">PAY AND PROCCED</button>
         </form>
       </div>  
       </div>

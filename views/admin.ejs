@@ -18,14 +18,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@1,300&display=swap" rel="stylesheet">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/8bbe7ed51b.js" crossorigin="anonymous"></script>
 
 </head>
-<body style="overflow: hidden;"  class="sign-back">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+<body class="bod">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
     <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,10 +46,7 @@
           <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/signin">SIGNIN</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/signup">SIGNUP</a>
+          <a class="nav-link mr-3 ml-2" href="/logout">Logout</a>
         </li>
         <!-- <li class="nav-item">
             <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
@@ -56,40 +54,46 @@
       </ul>
     </div>
   </nav>
-      <div class="sign-up" style="text-align: center;margin-top: 15%;">
-            <h3 style="color: aliceblue;">SIGN IN</h3>
-            <% if(mes == "username") { %>
-              <div class="popup mb-2" id="popupmsgSus">
-                <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-            <div class="text-right">
-                <i class="far fa-times-circle text-light float-right"></i>
+  <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
+  <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Admission Details</h2>
+  <hr>
+  <div class="container">
+      <div class="row">
+        <% found.forEach((val) => { %>
+        <div class="col-lg-6 col-sm-12 mt-3 mb-5">
+            <div class="patient">
+              <form action="/deletepat" method="post">
+                <input type="hidden" name="id" value="<%= val.admission_no %>">
+                <h3 class="text-center p-3">Admission no : <%= no++ %> <button type="submit" class="float-right" style="background: none;border: none;color: white;"><i class="fa-solid fa-trash-can"></i></button></h3>
+                </form>
+                <div class="ml-5 det">
+                  <form action="/patient_det" method="post">
+                  <input type="hidden" name="admiss_no" value="<%=val.admission_no%>">
+                    <div> Name : <%= val.p_name %></div>
+                    <div> Age : <%= val.age %></div>
+                    <div> Purpose : <%= val.purpose %></div>
+                    <%if(date <= val.admis_date && month <= val.admis_month && year <= val.admis_year){%>
+                    <div> Status : <span style="color: green;"> Pending...</span></div>
+                    <%} else {%>
+                    <div> Status : <span style="color: red;"> Admission date ended...</span></div>
+                    <% } %>
+                    <div class="text-center"><button type="submit" class="btn btn-success">View Full Details</button></div>
+                  </form>
+                </div>    
             </div>
-            Incorrect Username!!
-        </button>
-            </div>
-            <% } else if(mes == "password"){%>
-              <div class="popup mb-2" id="popupmsgSus">
-                <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-            <div class="text-right">
-                <i class="far fa-times-circle text-light float-right"></i>
-            </div>
-            Incorrect Password!!
-        </button>
-            </div>
-            <% } %>
-            <form action="/signin" method="POST">
-            <input required type="text" class="form-control" placeholder="Username" name="user">
-            <input required type="password" class="form-control" placeholder="Password" name="pass">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 2%;">signin</button>
-            <div class="mt-4 text-center" style="background-color: rgba(240, 248, 255, 0.637);margin:0% 5% 0% 5%;border-radius: 5px;">
-              Don't have an account? <a href="/signup">Create One</a>
-          </div>
-          </form>  
+        </div>
+        <% }) %>
       </div>
-      <script>
-        function messageHide(){
-            $(".popup").addClass("hide");
-        }
-      </script>
-</body>
-</html>      
+      <!-- <div>
+          <div>Admission No : </div>
+          <div>Admission Date : </div>
+          <div>Patient Name : </div>
+          <div>Patient Age : </div>
+          <div>Date Of Birth : </div>
+          <div>Address : </div>
+          <div>Purpose Of Admission : </div>
+          <div>Attender Name : </div>
+      </div> -->
+  </div>
+ </body>
+</html>  

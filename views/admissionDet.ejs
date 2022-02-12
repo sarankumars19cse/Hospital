@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body style="overflow: hidden;"  class="sign-back">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+<body class="bod">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
     <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,10 +45,7 @@
           <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/signin">SIGNIN</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/signup">SIGNUP</a>
+          <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
         </li>
         <!-- <li class="nav-item">
             <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
@@ -56,40 +53,46 @@
       </ul>
     </div>
   </nav>
-      <div class="sign-up" style="text-align: center;margin-top: 15%;">
-            <h3 style="color: aliceblue;">SIGN IN</h3>
-            <% if(mes == "username") { %>
-              <div class="popup mb-2" id="popupmsgSus">
-                <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-            <div class="text-right">
-                <i class="far fa-times-circle text-light float-right"></i>
-            </div>
-            Incorrect Username!!
-        </button>
-            </div>
-            <% } else if(mes == "password"){%>
-              <div class="popup mb-2" id="popupmsgSus">
-                <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-            <div class="text-right">
-                <i class="far fa-times-circle text-light float-right"></i>
-            </div>
-            Incorrect Password!!
-        </button>
-            </div>
-            <% } %>
-            <form action="/signin" method="POST">
-            <input required type="text" class="form-control" placeholder="Username" name="user">
-            <input required type="password" class="form-control" placeholder="Password" name="pass">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 2%;">signin</button>
-            <div class="mt-4 text-center" style="background-color: rgba(240, 248, 255, 0.637);margin:0% 5% 0% 5%;border-radius: 5px;">
-              Don't have an account? <a href="/signup">Create One</a>
-          </div>
-          </form>  
-      </div>
-      <script>
-        function messageHide(){
-            $(".popup").addClass("hide");
-        }
-      </script>
+  <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
+  <div>
+    <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Admission Details</h2>
+  <table class="mt-5 admiss-table" style="width:100%;">
+    <tr class="head">
+      <th>Admission no.</th>
+      <th>Admission Date</th>
+      <th>Patient Name</th>
+      <th>Patient Age</th>
+      <th>Date of Birth</th>
+      <th>Patient Address</th>
+      <th>Purpose of Admission</th>
+      <th>Attender Name</th>
+    </tr>  
+    <% found.forEach((val) => { %>
+      <% if(admiss_no == val.admission_no ) { %>
+    <tr class="data" style="background-color: rgba(25, 25, 97, 0.911);color: white;;">
+      <td><%= val.admission_no %></td>
+      <td><%= val.admis_date %>/<%= val.admis_month %>/<%= val.admis_year %></td>
+      <td><%= val.p_name %></td>
+      <td><%= val.age %></td>
+      <td><%= val.dob %></td>
+      <td><%= val.address %></td>
+      <td><%= val.purpose %></td>
+      <td><%= val.a_name %></td>
+    </tr> 
+    <% } else { %>
+    <tr class="data">
+      <td><%= val.admission_no %></td>
+      <td><%= val.admis_date %>/<%= val.admis_month %>/<%= val.admis_year %></td>
+      <td><%= val.p_name %></td>
+      <td><%= val.age %></td>
+      <td><%= val.dob %></td>
+      <td><%= val.address %></td>
+      <td><%= val.purpose %></td>
+      <td><%= val.a_name %></td>
+    </tr> 
+    <% } %>
+    <% }) %> 
+  </table>
+  </div>
 </body>
 </html>      

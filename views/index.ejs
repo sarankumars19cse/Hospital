@@ -19,79 +19,184 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="overflow-x: hidden;">
-    <div class="index-back">
-        <nav class="navbar fixed-top nav-tabs navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;">KARUR  HEALTH CARE <i class="fas fa-stethoscope"></i></a>
+<body style="overflow-x: hidden;" class="bod">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+        <!-- <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;">KARUR  HEALTH CARE <i class="fas fa-stethoscope"></i></a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">HOME</a>
+              <a class="nav-link mr-3" href="/">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admission">ADMISSION</a>
+              <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ambulance">AMBULANCE</a>
+              <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
             </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="/medical">MEDICAL</a>
-            </li>
-            <li class="nav-item">
-                <a href="/signin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link" style="border: none;">SIGN IN</button></a>
-            </li>
-            <li class="nav-item">
-                <a href="/signup" style="text-decoration: none;"><button class="btn btn-outline-info nav-link" style="border: none;">SIGN UP</button></a>
+              <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
             </li>
           </ul>
         </div>
       </nav>
-      <div class="index-ul">
-        <a href="/logout" style="margin-left: 95%;"><button type="button" class="btn btn-outline-danger">Logout</button></a>
-        <h2 style="margin: 0 0 0 5%;padding: 6% 0 2% 2%;">Obstetrics (Pregnancy & Child Birth) we have</h2>
-        <ul style="margin-left: 5%;padding-bottom: 5%;">
-        <li>Senior consultants attending to emergencies 24*7</li>
-        <li>deluxe suites with tv , heaters, spacious balconies for your comfort and speedy recovery</li>
-        <li>24 hour obstetric call</li>
-        <li>Early pregnancy assessment according to the latest guidelines</li>
-        <li>Ante natal exercise classes</li>
-        <li>The latest Ultra Sound machine with Colour Doppler</li>
-        <li>Continuous Electronic heart monitoring (Cardio Tocograph) during delivery</li>
-        <li>One to one nursing care</li>
-        <li>Cord blood banting</li>
-        <li>Expert neonatologists for new born resuscitation</li> 
-        <li>State of the art Baby warmer and baby phototherapy unit</li> 
-        <li>We are attached to ‘NEOLIFE’ – neonatal intensive care unit for care of pretexm babies & sick new</li> 
-        </ul>
-      </div> 
+      <div class="whl-index"> 
+      <div class="hospital-name"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </div>
+      <div style="margin:0 5%;">
+      <!-- <div class="row ind-whl-icn">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
+          <i class="fas fa-ambulance"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(130, 149, 219, 0.534);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+          <i class="fas fa-microscope"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(130, 149, 219, 0.534);">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
+          <i class="fas fa-flask"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+          <i class="fas fa-child"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        </div>
+      </div> -->
+      <div class="row ind-whl-icn">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
+          <i class="fas fa-ambulance"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(130, 149, 219, 0.534);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+          <i class="fas fa-microscope"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(130, 149, 219, 0.534);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+          <i class="fas fa-flask"></i>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+          <i class="fas fa-child"></i>
+        </div>
       </div>
-      <div class="index-specialities">
-        <h2>Specialities</h2>
-        <ul>
-          <li>Birthing Centre</li>
-          <li>Cradle Fertility Centre</li>
-          <li>Surgical Centre</li>
-          <li>Bone & Joint Centre</li>
-          <li>Non-Surgical Treatment</li>
-          <li>Multi Speciality Hospital</li>
-        </ul>
-      </div> 
-      <div class="row" style="margin-top: 5%;background-color: rgb(156, 156, 248);">
-          <div class="col-lg-5 col-md-5 col-sm-12" style="margin-left: 3%;padding: 5% 0 3% 0;">
-            <h2>CONTACT US:</h2>
-            <p>Manmangalam, <br> Karur, <br> Tamil Nadu 638060 <br> <a href="https://kongu.ac.in/" style="color: black;">kongu.ac.in</a></p>
-          </div>
-          <div class="col-lg-5 offset-lg-1 col-md-5 col-sm-12" style="padding: 5% 0 3% 0;">
-            <h2>Follow us on:</h2>
-            <p><i class="fab fa-facebook" style="font-size:xx-large;"></i> <i class="fab fa-instagram-square" style="font-size: xx-large;margin-left: 7%;"></i> <i class="fab fa-youtube" style="font-size: xx-large;margin-left: 7%;"></i></p>
-          </div>
-      </div> 
-</body>
-</html>
+      </div>
+      </div>
+      <div class="whl-cntn">
+        <div class="index-ul">
+          <h2 class="cont1-head">Obstetrics (Pregnancy & Child Birth) we have</h2>
+          <hr>
+          <ul>
+            <li>Senior consultants attending to emergencies 24*7</li>
+            <li>deluxe suites with tv , heaters, spacious balconies for your comfort and speedy recovery</li>
+            <li>24 hour obstetric call</li>
+            <li>Early pregnancy assessment according to the latest guidelines</li>
+            <li>Ante natal exercise classes</li>
+            <li>The latest Ultra Sound machine with Colour Doppler</li>
+            <li>Continuous Electronic heart monitoring (Cardio Tocograph) during delivery</li>
+            <li>One to one nursing care</li>
+            <li>Cord blood banting</li>
+            <li>Expert neonatologists for new born resuscitation</li> 
+            <li>State of the art Baby warmer and baby phototherapy unit</li> 
+            <li>We are attached to ‘NEOLIFE’ – neonatal intensive care unit for care of pretexm babies & sick new</li> 
+          </ul>
+        </div> 
+        <!-- <div class=""> -->
+        <h2 class="cont1-head">The Ultimate List of Medical Specialties and Subspecialties</h2>
+        <hr>
+        <p class="cont1-para">The medical field is as expansive and multifaceted as the intricacies of the human body. Doctor specialties exist for each of these fields of medicine to serve the needs of a particular realm of care. But where should an aspiring doctor like yourself begin when finding a medical specialty?
+
+          You came to the right place. We put together this comprehensive list of medical specialties and subspecialties, as recognized by the Association of American Medical Colleges. Scroll through to discover the expansive possibilities available when applying to medical school.
+          
+          Your path to residency starts at St. George’s University. Are You In?
+          
+          If you’re already interested in a particular field of medicine, click on the corresponding link below to explore the options within that specialty.</p>
+          <h2 class="cont1-head">A COMPREHENSIVE LIST OF MEDICAL SPECIALTIES</h2>
+          <hr>
+        <p class="cont1-para">Every medical specialist shares one common goal: to help patients get healthy or stay healthy. But each one has very specific skills and competencies that make them an integral member of the medical field. Learn more about each specialty and the subspecialties that fall underneath them.</p>
+        <h2 class="cont1-head">1. ALLERGY AND IMMUNOLOGY</h2>
+        <hr>
+        <p class="cont1-para">Specialists in allergy and immunology work with both adult and pediatric patients suffering from allergies and diseases of the respiratory tract or immune system. They may help patients suffering from common diseases such as asthma, food and drug allergies, immune deficiencies, and diseases of the lung. Specialists in allergy and immunology can pursue opportunities in research, education, or clinical practice.</p>
+
+        <h2 class="cont1-head">2. ANESTHESIOLOGY</h2>
+        <hr>
+        <p class="cont1-para">Anesthesiology is the branch of medicine dedicated to pain relief for patients before, during, and after surgery. The American Board of Anesthesiology outlines the following subspecialties within the field in the following areas of care:
+        <ul class="cont1-para">
+          <li> Critical care medicine</li>
+          <li>Hospice and palliative care</li>
+          <li>Pain medicine</li>
+          <li>Pediatric anesthesiology</li>
+          <li>Sleep medicine</li>
+        </ul></p>
+        <h2 class="cont1-head">3. MEDICAL GENETICS</h2>
+        <hr>
+        <p class="cont1-para">A medical geneticist is a physician who treats hereditary disorders and diagnoses diseases that are caused by genetic defects. Medical geneticists may provide patients with therapeutic interventions and specialized counseling. They also educate patients and their families on their diagnoses and how to cope with their genetic disorder. Medical geneticists conduct cytogenetic, radiologic, and biochemical testing and scientific research in the field.</p>
+        <h2 class="cont1-head">WHICH MEDICAL FIELDS INTEREST YOU MOST?</h2>
+        <hr>
+        <p class="cont1-para">This long list of medical specialties and subspecialties shows the many options you have for making an impact in patients’ lives. Selecting a specialty that challenges you, aligns with your career goals, and provides your desired lifestyle are all important aspects you need to take into consideration.
+
+          Narrowing down your options and working toward your intended field of medicine early on in your medical school journey can give you an advantage. This is something many doctors wish someone had told them earlier.
+          
+          For more insider insight like this, check out our article, "Doctors Reveal 12 Things No One Tells You About Pursuing a Career in Medicine."
+          <br>
+          <br>
+          *This article has been updated from its original version.</p>
+          <hr>
+          <!-- </div> -->
+        </div>
+        <footer class="foot p-1 mt-5">
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8 col-md-5 col-sm-10 mt-2">
+            <span>@KARUR HEALTH CARE </span>
+            </div>
+            <div class="fa-2x float-right col-lg-3 col-md-5 col-sm-10">
+            <i class="fab fa-facebook-square pr-3"></i>
+            <i class="fab fa-twitter-square pr-3"></i>
+            <i class="fab fa-instagram pr-3"></i>
+            <i class="fab fa-pinterest-square pr-3"></i>
+            <i class="fab fa-linkedin pr-3"></i>
+            </div>
+          </div>  
+        </footer>
+    </body>
+    </html>

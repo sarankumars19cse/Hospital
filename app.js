@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"))
 app.set("view engine","ejs")
 
-mongoose.connect("mongodb+srv://Saran:Saran@hospitaldb.yia55.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"||"mongodb://localhost:27017/hospitalDB",{ useNewUrlParser: true , useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://Saran:Saran@hospitaldb.yia55.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"||"mongodb://localhost:27017/hospitalDB")
 
 const userSchema=new mongoose.Schema({
     name:String,

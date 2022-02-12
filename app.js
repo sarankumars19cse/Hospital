@@ -1,6 +1,7 @@
 const express=require("express")
 const mongoose=require("mongoose")
 const alert=require("alert")
+let port = process.env.PORT || 8000
 
 const app=express();
 app.use(express.urlencoded({extended:true}))
@@ -392,6 +393,6 @@ app.post("/deletepat",function(req,res){
     })
 })
 
-app.listen(8000,function(){
+app.listen(port,function(){
     console.log("app is running in the browser");
 })

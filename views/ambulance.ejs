@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
-<body>
+<body class="bod">
     <div class="ambu-back">
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
         <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
@@ -34,17 +34,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link mr-3" href="/">HOME</a>
+              <a class="nav-link mr-3 ml-2" href="/">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
+              <a class="nav-link mr-3 ml-2 active" href="/ambulance">AMBULANCE</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
             </li>
@@ -62,7 +59,7 @@
     </button>
         </div>
         <% } %>
-        <h3 style="color: white;">AMBULANCE SERVICE IS AVAILABLE HERE TO MIGRATE HOSPITALS</h3>
+        <h3>AMBULANCE SERVICE IS AVAILABLE HERE TO MIGRATE HOSPITALS</h3>
         <form action="/ambulance" method="post">
           <p>PATIENT NAME : <input required type="text" placeholder="Patient Name" class="form-control mt-3" name="patientName"></p>
           <p>FROM: <input type="text" class="form-control" value="KARUR HEALTH CARE" readonly name="from"></p>
@@ -70,7 +67,7 @@
           <p>Enter the date When did you need this service : <input type="date" class="form-control" required name="time"></p>
           <p>ATTENDERS ALLOWED WITH PATIENT : <input type="number" value="1" readonly class="form-control" required name="attenders"></p>
           <p>ATTENDER NAME : <input required type="text" placeholder="Attender Name" class="form-control mt-3" name="attenderName"></p>
-          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 3%;">PAY AND REGISTER</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 3%;">BOOK NOW</button>
         </form>
       </div>
     </div>

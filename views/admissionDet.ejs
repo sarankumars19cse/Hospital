@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link mr-3" href="/">HOME</a>
+          <a class="nav-link mr-3 ml-2" href="/">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
@@ -41,21 +41,16 @@
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
         </li>
-        <!-- <li class="nav-item">
-            <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
-        </li> -->
       </ul>
     </div>
   </nav>
   <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
   <div>
     <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Admission Details</h2>
+    <div style="overflow-x: auto;">
   <table class="mt-5 admiss-table" style="width:100%;">
     <tr class="head">
       <th>Admission no.</th>
@@ -70,7 +65,7 @@
     <% found.forEach((val) => { %>
       <% if(admiss_no == val.admission_no ) { %>
     <tr class="data" style="background-color: rgba(25, 25, 97, 0.911);color: white;;">
-      <td><%= val.admission_no %></td>
+      <td><%= sno++ %></td>
       <td><%= val.admis_date %>/<%= val.admis_month %>/<%= val.admis_year %></td>
       <td><%= val.p_name %></td>
       <td><%= val.age %></td>
@@ -81,7 +76,7 @@
     </tr> 
     <% } else { %>
     <tr class="data">
-      <td><%= val.admission_no %></td>
+      <td><%= sno++ %></td>
       <td><%= val.admis_date %>/<%= val.admis_month %>/<%= val.admis_year %></td>
       <td><%= val.p_name %></td>
       <td><%= val.age %></td>
@@ -93,6 +88,7 @@
     <% } %>
     <% }) %> 
   </table>
+  </div>
   </div>
 </body>
 </html>      

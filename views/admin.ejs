@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link mr-3" href="/">HOME</a>
+          <a class="nav-link mr-3 ml-2" href="/">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
@@ -42,15 +42,9 @@
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/logout">Logout</a>
         </li>
-        <!-- <li class="nav-item">
-            <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
-        </li> -->
       </ul>
     </div>
   </nav>
@@ -64,7 +58,7 @@
             <div class="patient">
               <form action="/deletepat" method="post">
                 <input type="hidden" name="id" value="<%= val.admission_no %>">
-                <h3 class="text-center p-3">Admission no : <%= no++ %> <button type="submit" class="float-right" style="background: none;border: none;color: white;"><i class="fa-solid fa-trash-can"></i></button></h3>
+                <h3 class="text-center p-3">Admission no : <%= no++ %> <button type="submit" class="float-right" style="background: none;border: none;color: white; cursor: pointer;" onclick="delet()"><i class="fa-solid fa-trash-can"></i></button></h3>
                 </form>
                 <div class="ml-5 det">
                   <form action="/patient_det" method="post">
@@ -84,16 +78,11 @@
         </div>
         <% }) %>
       </div>
-      <!-- <div>
-          <div>Admission No : </div>
-          <div>Admission Date : </div>
-          <div>Patient Name : </div>
-          <div>Patient Age : </div>
-          <div>Date Of Birth : </div>
-          <div>Address : </div>
-          <div>Purpose Of Admission : </div>
-          <div>Attender Name : </div>
-      </div> -->
   </div>
+  <script>
+    function delet(){
+       alert("Deleted Sucessfully!!");
+    }
+  </script>
  </body>
 </html>  

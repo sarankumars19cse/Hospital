@@ -1,14 +1,83 @@
-/* .index-back{
-    background-image: url("../pictures/hospital.jpeg");
+.active{
+    color: white;
+}
+.nav:hover{
+    border-radius: 8px;
+}
+/* admin */
+.patient h3{
+    background-color: rgb(24, 24, 95);
+    color: #f4f6f8;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.det{
+    font-size: 150%;
+}
+.patient div{
+    margin-bottom: 5%;
+}
+.patient{
+    box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
+    -webkit-box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
+    -moz-box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #fdfeff;
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    font-family: 'Source Serif 4', sans-serif;
+}
+/* admission */
+.admissButton{
+    margin-top: 2%;
+}
+.admissBody{
+    overflow-x: hidden;
+    background-color: #fdfeff;
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+}
+.medic-back{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/index\ background.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
-    height: auto;
+    height: 100vh;
     background-position-x: 30%;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-} */
+    margin-top: -1%;
+}
+
+.admiss{
+    color: white;
+    margin: 4% 20% 0 20%;
+    padding: 5% 0 0 0;
+}
+
+.ambu-back{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/ambulance.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    background-position-x: 30%;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+.ambu{
+    margin: 0 20% 0 20%;
+    color: white;
+    padding: 6% 0 0 0;
+}
+
+/* index */
+
+.whl-index{
+    margin-top: 1%;
+} 
 .hospital-name{
     color: rgb(95, 23, 23);
     font-size: 200%;
@@ -24,41 +93,11 @@
     padding: 3%;
     text-align: center;
 }
-.speciality{
-    border: 1px solid black;
-    border-radius: 8px;
-    margin-left: 5%;
-    padding: 9%;
-    background-color: #f4f6f8;
-    background-image: url("https://www.transparenttextures.com/patterns/xv.png");
-    box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-    -webkit-box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-    -moz-box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-}
-.nav:hover{
-    border-radius: 8px;
-}
-.speciality-image{
-    box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-    -webkit-box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-    -moz-box-shadow: 10px 9px 17px -1px rgba(0,0,0,0.83);
-}
-.bod{
-    background-color: #fdfeff;
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
-}
-.cont1-head{
-    padding: 6% 0 2% 2%;
-    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
-    color: rgb(95, 23, 23);
-}
+
 .foot{
     background-color: rgb(114, 35, 35);
     color: white;
 }
-/* .index-ul ul{
-    margin:0 10% 0 10%;
-} */
 .whl-cntn{
     margin:0 15% 0 15%;
 }
@@ -67,6 +106,35 @@
     font-size: 150%;
     font-family: 'Quicksand', sans-serif;
 }
+.index-ul ul li{
+    font-size: 200%;
+    padding-bottom: 1%;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.sign-up{
+    padding: 3%;
+    margin: 11% 30% 8% 30%;
+    border-radius: 5px;
+    background-color: #f4f6f83a;
+}
+.sign-up form input,h3{
+    margin-bottom: 5%;
+}
+/* admin , index , ambulanceDet admissionDet  ambulance*/
+.bod{
+    background-color: #fdfeff;
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+} 
+
+/* admin , index , admissionDet , ambulanceDet */
+.cont1-head{
+    padding: 6% 0 2% 2%;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    color: rgb(95, 23, 23);
+}
+
+/* signin , signup */
 .sign-back{
     background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/sign.jpg");
     background-size: 100%;
@@ -77,65 +145,16 @@
     -moz-background-size:cover;
     -o-background-size:cover;
 }
-.sign-up{
-    padding: 3%;
-    margin: 11% 30% 8% 30%;
-    /* border: 1px solid white; */
-    border-radius: 5px;
-    background-color: #f4f6f83a;
-}
-.sign-up form input,h3{
-    margin-bottom: 5%;
-}
-.medic-back{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/index\ background.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 100vh;
-    background-position-x: 30%;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    margin-top: -1%;
-}
-
-.index-ul ul li{
-    font-size: 200%;
-    padding-bottom: 1%;
-    font-family: 'Cormorant Garamond', serif;
-}
-.prescription{
-    margin: 0 20% 0 20%;
-    padding: 8% 0 0 0;
-}
-.ambu-back{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.10)),url("../pictures/ambulance.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 100vh;
-    background-position-x: 30%;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-}
-.ambu{
-    margin: 0 20% 0 20%;
-    color: white;
-    padding: 6% 0 0 0;
-}
-.admissDet{
-    margin-left: 20%;
-    font-size: 150%;
-}
 .hide{
     display: none;
 }
-.admiss{
-    color: white;
-    margin: 4% 20% 0 20%;
-    padding: 5% 0 0 0;
+
+/* @media */
+@media(max-width:768px)
+{
+    .hospital-name{
+        font-size: 150%;
+    }
 }
 @media(max-width:765px)
 {
@@ -146,19 +165,6 @@
         display: none;
     }
 }
-@media(max-width:768px)
-{
-    .hospital-name{
-        font-size: 150%;
-    }
-}
-.whl-index{
-    margin-top: 1%;
-} 
-.form-control{
-    background-color: rgba(255, 255, 255, 0.671);
-    color: black;
-}
 @media(max-width:430px){
     .index-specialities ul{
         margin-left: 0;
@@ -168,54 +174,61 @@
     }
     .admiss{
         margin-top: 30%;
+        color: black;
     }
     .ambu{
-        margin-top: 5%;
+        margin-top: 15%;
         overflow-y: scroll;
+        color :black;
+    }
+    .medic-back{
+        background-image: none;
+    }
+    .ambu-back{
+        background-image: none;
+        color: black;
+        margin-top: 5%;
+    }
+    .admissButton{
+        margin-top: -8%;
+        margin-bottom: 5%;
+        color: rgb(255, 249, 249);
+        background-color: rgb(52, 130, 233);
     }
 }
+/* admission , ambulance */
+.form-control{
+    background-color: rgba(255, 255, 255, 0.671);
+    color: black;
+}
+
+
+
+/* abulanceDet , admissionDet , admin */
 .admiss-head{
     margin-left: 40%;
 }
 table ,th, td{
     border: 1px solid black;
 }
+
+/* admissionDet , ambulanceDet */
 .head:hover{
     background-color: rgba(102, 4, 4, 0.877);
     color: white;
     cursor: pointer;
 }
-.dlt{
-    border: none;
-}
+
+/* admissionDet , ambulanceDet */
 .data:hover{
     background-color: rgb(24, 24, 95);
     color: #f4f6f8;
     cursor: pointer;
 }
+
+/* admissionDet , ambulanceDet */
 .admiss-table{
     text-align: center;
     font-size: 130%;
 }
-.patient{
-    box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
-    -webkit-box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
-    -moz-box-shadow: 13px 15px 17px -1px rgba(0,0,0,0.76);
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #fdfeff;
-    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
-    font-family: 'Source Serif 4', sans-serif;
-}
-.det{
-    font-size: 150%;
-}
-.patient h3{
-    background-color: rgb(24, 24, 95);
-    color: #f4f6f8;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.patient div{
-    margin-bottom: 5%;
-}
+

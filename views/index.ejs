@@ -28,14 +28,13 @@
 </head>
 <body style="overflow-x: hidden;" class="bod">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
-        <!-- <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;">KARUR  HEALTH CARE <i class="fas fa-stethoscope"></i></a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link mr-3" href="/">HOME</a>
+              <a class="nav-link mr-3 active ml-2" href="/">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
@@ -43,9 +42,6 @@
             <li class="nav-item">
               <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
             </li>
@@ -55,67 +51,35 @@
       <div class="whl-index"> 
       <div class="hospital-name"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </div>
       <div style="margin:0 5%;">
-      <!-- <div class="row ind-whl-icn">
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
-          <i class="fas fa-ambulance"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(130, 149, 219, 0.534);">
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
-          <i class="fas fa-microscope"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(130, 149, 219, 0.534);">
-          <i class="fas fa-heartbeat"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
-          <i class="fas fa-stethoscope"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
-          <i class="fas fa-flask"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
-          <i class="fas fa-child"></i>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
-        </div>
-      </div> -->
       <div class="row ind-whl-icn">
         <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
           <i class="fas fa-ambulance"></i>
         </div>
         <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(130, 149, 219, 0.534);">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
           <i class="fas fa-microscope"></i>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.795);">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.911);">
           <i class="fas fa-heartbeat"></i>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(130, 149, 219, 0.534);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(130, 149, 219, 0.534);">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(135, 154, 216, 0.397);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(135, 154, 216, 0.397);">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.911);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.911);">
           <i class="fas fa-stethoscope"></i>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
-        </div>
         <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
           <i class="fas fa-flask"></i>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(119, 144, 218, 0.795);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(119, 144, 218, 0.795);">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn empt" style="background-color: rgba(121, 142, 211, 0.712);">
+        <div class="col-lg-2 col-md-4 col-sm-4 ind-icn" style="background-color: rgba(121, 142, 211, 0.712);">
           <i class="fas fa-child"></i>
         </div>
       </div>
@@ -140,7 +104,6 @@
             <li>We are attached to ‘NEOLIFE’ – neonatal intensive care unit for care of pretexm babies & sick new</li> 
           </ul>
         </div> 
-        <!-- <div class=""> -->
         <h2 class="cont1-head">The Ultimate List of Medical Specialties and Subspecialties</h2>
         <hr>
         <p class="cont1-para">The medical field is as expansive and multifaceted as the intricacies of the human body. Doctor specialties exist for each of these fields of medicine to serve the needs of a particular realm of care. But where should an aspiring doctor like yourself begin when finding a medical specialty?
@@ -181,7 +144,6 @@
           <br>
           *This article has been updated from its original version.</p>
           <hr>
-          <!-- </div> -->
         </div>
         <footer class="foot p-1 mt-5">
           <div class="row">

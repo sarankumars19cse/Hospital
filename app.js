@@ -1,6 +1,5 @@
 const express=require("express")
 const mongoose=require("mongoose")
-const alert=require("alert")
 let port = process.env.PORT || 8000
 
 const app=express();
@@ -8,7 +7,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"))
 app.set("view engine","ejs")
 
-mongoose.connect("mongodb+srv://Saran:Saran@hospitaldb.yia55.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"||"mongodb://localhost:27017/hospitalDB")
+mongoose.connect("mongodb://localhost:27017/hospitalDB",{ useNewUrlParser: true , useUnifiedTopology: true})
 
 const userSchema=new mongoose.Schema({
     name:String,
@@ -45,14 +44,6 @@ const ambulanceSchema=new mongoose.Schema({
 })
 
 const Ambulance=new mongoose.model("ambulance",ambulanceSchema)
-
-// const medicalSchema=new mongoose.Schema({
-//     username:String,
-//     doctor_name:String,
-//     address:String
-// })
-
-// const Medical=new mongoose.model("medical",medicalSchema)
 
 let count=0;
 let uname;
@@ -298,7 +289,7 @@ app.get("/admissionDet",function(req,res)
     Admission.find({},function(e,found){
                 if(!e)
                 {
-                    res.render("admissionDet",{found:found,admiss_no:0});
+                    res.render("admissionDet",{found:found,admiss_no:0,sno:1});
                 }
             })
 })
@@ -338,7 +329,7 @@ app.post("/patient_det",function(req,res){
     Admission.find({},function(e,found){
         if(!e)
         {
-            res.render("admissionDet",{found:found,admiss_no:admiss_no});
+            res.render("admissionDet",{found:found,admiss_no:admiss_no,sno:1});
         }
     })
 })

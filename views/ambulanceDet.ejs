@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link mr-3" href="/">HOME</a>
+          <a class="nav-link mr-3 ml-2" href="/">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
@@ -42,22 +42,16 @@
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/medical">MEDICAL</a>
-        </li> -->
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
+          <a class="nav-link mr-3 ml-2 active" href="/admin">ADMIN</a>
         </li>
-        <!-- <li class="nav-item">
-            <a href="/admin" style="text-decoration: none;"><button class="btn btn-outline-success nav-link mr-3 ml-2" style="border: none;">ADMIN</button></a>
-        </li> -->
       </ul>
     </div>
   </nav>
   <a href="/admissionDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Admission Details</button></a>
   <div>
     <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Ambulance Details</h2>
-
+    <div style="overflow-x: auto;">
     <table class="mt-5 admiss-table" style="width:100%;">
       <tr class="head">
         <th>Sno.</th>
@@ -80,11 +74,17 @@
           <td><%= val.attenders %></td>
           <td><%= val.attenderName %></td>
           <input type="hidden" name="id" value="<%= val._id %>">
-        <td><button type="submit" class="btn"><i class="fa-solid fa-trash-can"></i></button></td>
+        <td><button type="submit" class="btn" onclick="delet()"><i class="fa-solid fa-trash-can"></i></button></td>
         </form>
       </tr> 
       <% }) %> 
     </table>
     </div>
+    </div>
+    <script>
+      function delet(){
+         alert("Deleted Sucessfully!!");
+      }
+    </script>
   </body>
   </html>      

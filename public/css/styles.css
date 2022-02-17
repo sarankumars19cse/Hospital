@@ -208,14 +208,21 @@
 .admiss-head{
     margin-left: 40%;
 }
-table ,th, td{
-    border: 1px solid black;
+table {
+    border: 2px solid rgba(0, 0, 0, 0.514);
+}
+th ,td{
+    border: 2px solid rgba(126, 124, 124, 0.514);
+    width: 10%;
+}
+.table{
+    padding: 0 10% 0 10%;
 }
 
 /* admissionDet , ambulanceDet */
 .head:hover{
     background-color: rgba(102, 4, 4, 0.877);
-    color: white;
+    /* color: white; */
     cursor: pointer;
 }
 
@@ -231,4 +238,6 @@ table ,th, td{
     text-align: center;
     font-size: 130%;
 }
+table tr:nth-child(even),th{background-color: #d8d8d8;}
 
+table tr:hover {background-color: #ddd;}

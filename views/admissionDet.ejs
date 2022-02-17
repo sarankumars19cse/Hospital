@@ -50,18 +50,21 @@
   <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
   <div>
     <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Admission Details</h2>
-    <div style="overflow-x: auto;">
+    <div style="overflow: auto;" class="table">
   <table class="mt-5 admiss-table" style="width:100%;">
-    <tr class="head">
-      <th>Admission no.</th>
-      <th>Admission Date</th>
-      <th>Patient Name</th>
-      <th>Patient Age</th>
-      <th>Date of Birth</th>
-      <th>Patient Address</th>
-      <th>Purpose of Admission</th>
-      <th>Attender Name</th>
-    </tr>  
+    <thead>
+      <tr class="head">
+        <th>Admission no.</th>
+        <th>Admission Date</th>
+        <th>Patient Name</th>
+        <th>Patient Age</th>
+        <th>Date of Birth</th>
+        <th>Patient Address</th>
+        <th>Purpose of Admission</th>
+        <th>Attender Name</th>
+      </tr>  
+    </thead>
+    <tbody>
     <% found.forEach((val) => { %>
       <% if(admiss_no == val.admission_no ) { %>
     <tr class="data" style="background-color: rgba(25, 25, 97, 0.911);color: white;;">
@@ -87,8 +90,10 @@
     </tr> 
     <% } %>
     <% }) %> 
+    </tbody>
   </table>
   </div>
   </div>
+</div>
 </body>
 </html>      

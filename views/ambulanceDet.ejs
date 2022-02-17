@@ -51,8 +51,9 @@
   <a href="/admissionDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Admission Details</button></a>
   <div>
     <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Ambulance Details</h2>
-    <div style="overflow-x: auto;">
+    <div style="overflow: auto;" class="table">
     <table class="mt-5 admiss-table" style="width:100%;">
+      <thead>
       <tr class="head">
         <th>Sno.</th>
         <th>Patient Name</th>
@@ -63,6 +64,8 @@
         <th>Attender Name</th>
         <th>Status</th>
       </tr>  
+      </thead>
+      <tbody>
       <% found.forEach((val) => { %>
       <tr class="data">
         <form action="/deleteamb" method="post">
@@ -78,6 +81,7 @@
         </form>
       </tr> 
       <% }) %> 
+      </tbody>
     </table>
     </div>
     </div>

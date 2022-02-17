@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
-<body class="bod">
+<body class="adminBod">
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
     <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,13 +46,16 @@
           <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/logout">Logout</a>
+          <a class="nav-link mr-3 ml-2 active" href="/admin">ADMIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
         </li>
       </ul>
     </div>
   </nav>
   <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
-  <h2 class="cont1-head admiss-head" style="padding-top: 3%;">Admission Details</h2>
+  <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Admission Details</h2>
   <hr>
   <div class="container">
       <div class="row">
@@ -61,7 +64,7 @@
             <div class="patient">
               <form action="/deletepat" method="post">
                 <input type="hidden" name="id" value="<%= val.admission_no %>">
-                <h3 class="text-center p-3">Admission no : <%= no++ %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
+                <h3 class="text-center p-3">Admission no : <%= no %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
                 <!--Modal: modalConfirmDelete-->
                   <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
@@ -70,11 +73,11 @@
                     <div class="modal-content text-center dltMod">
                       <!--Header-->
                       <div class="modal-header d-flex justify-content-center bg-danger">
-                        <p class="heading pt-2 pb-2" style="color: white;">Are you sure You want to delete?</p>
+                        <p class="heading pt-2 pb-2" style="color: white;font-size: 140%;"><b>Are you sure You want to delete?</b></p>
                       </div>
 
                       <!--Body-->
-                      <div class="modal-body mt-2 mb-2">
+                      <div class="modal-body mt-2 mb-2"> 
 
                         <i class="fas fa-times fa-5x animate__animated animate__rotateIn" style="color: red;"></i>
 
@@ -84,7 +87,7 @@
                       <div class="modal-footer flex-center mt-2 mb-2 yesNo">
                         <!-- <a href="" class="btn  btn-outline-danger">Yes</a> -->
                         <button class="btn btn-outline-danger btn-lg yes" type="submit">Yes</button> 
-                        <a type="button" class="btn btn-danger waves-effect btn-lg no ml-lg-5" data-dismiss="modal">No</a>
+                        <a type="button" class="btn btn-danger waves-effect btn-lg no ml-lg-5" style="color: white;" data-dismiss="modal">No</a>
                       </div>
                     </div>
                     <!--/.Content-->
@@ -94,7 +97,7 @@
                 </form>
                 <div class="ml-5 det">
                   <form action="/patient_det" method="post">
-                  <input type="hidden" name="admiss_no" value="<%=val.admission_no%>">
+                  <input type="hidden" name="admiss_no" value="<%= no++ %>">
                     <div> Name : <%= val.p_name %></div>
                     <div> Age : <%= val.age %></div>
                     <div> Purpose : <%= val.purpose %></div>

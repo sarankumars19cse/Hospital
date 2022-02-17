@@ -6,7 +6,7 @@
 }
 /* admin */
 .patient h3{
-    background-color: rgb(24, 24, 95);
+    background-color: rgb(41, 40, 40);
     color: #f4f6f8;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -26,6 +26,10 @@
     background-color: #fdfeff;
     background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
     font-family: 'Source Serif 4', sans-serif;
+}
+.adminBod{
+    background: rgb(71,89,189);
+    background: linear-gradient(90deg, rgba(71,89,189,1) 0%, rgba(118,9,121,1) 82%);
 }
 /* admission */
 .admissButton{
@@ -114,7 +118,7 @@
 
 .sign-up{
     padding: 3%;
-    margin: 11% 30% 8% 30%;
+    margin: 4% 30% 8% 30%;
     border-radius: 5px;
     background-color: #f4f6f83a;
 }
@@ -253,4 +257,19 @@ table tr:hover {background-color: #ddd;} */
 .yes{
     padding-right:15%;
     padding-left:15%;
+}
+
+.sign{
+    border: 1px solid black;
+    width: 30%;
+}
+.hide{
+    display: none;
+}
+.signbtn{
+    color: white;
+    background-color: rgba(247, 70, 70, 0.774);
+}
+.signb{
+    background-color: rgba(71,89,189,1);
 }

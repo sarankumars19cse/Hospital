@@ -45,6 +45,9 @@
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2 active" href="/admin">ADMIN</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -69,7 +72,7 @@
 </thead>
 <tbody>
   <% found.forEach((val) => { %>
-    <% if(admiss_no == val.admission_no ) { %>
+    <% if(admiss_no == sno ) { %>
   <tr class="data" style="background-color: rgba(25, 25, 97, 0.911);color: white;;">
     <td class="column1"><%= sno++ %></td>
     <td class="column2"><%= val.admis_date %>/<%= val.admis_month %>/<%= val.admis_year %></td>

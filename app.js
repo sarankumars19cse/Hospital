@@ -18,7 +18,7 @@ const userSchema=new mongoose.Schema({
 const User=new mongoose.model("user",userSchema)
 
 const admissionSchema=new mongoose.Schema({
-    admission_no:Number,
+    // admission_no:Number,
     admis_date:Number,
     admis_month:Number,
     admis_year:Number,
@@ -54,16 +54,13 @@ app.get("/",function(req,res){
 })
 
 app.get("/admission",function(req,res){
-    let max = 0;
+    let c = 0;
     Admission.find({},function(e,found){
         if(!e){
         found.forEach((val) =>{
-            if(val.admission_no > max)
-            {
-                max = val.admission_no;
-            }
+            c++;
         } )
-    res.render("admission",{mes:"",admissNo:max});
+    res.render("admission",{mes:"",admissNo:c});
         }
     })
 })
@@ -159,17 +156,13 @@ app.post("/admission",function(req,res){
         }   
     }
     admissno++;
-    var max = 0;
+    var c = 0;
     Admission.find({},function(e,found){
         found.forEach((val) =>{
-            if(val.admission_no > max)
-            {
-                max = val.admission_no;
-            }
+                c++;
         } )
-        max++;
         const NewAdmission=new Admission({
-            admission_no:max,
+            // admission_no:max,
             admis_date:date,
             admis_month:month,
             admis_year:year,
@@ -186,7 +179,7 @@ app.post("/admission",function(req,res){
                 console.log(e)
             }
             else{
-                res.render("admission",{mes:"Success",admissNo:max});
+                res.render("admission",{mes:"Success",admissNo:c});
             }
         })
     })
@@ -218,7 +211,7 @@ app.post("/ambulance",function(req,res){
 })
 
 app.get("/signin",function(req,res){
-    res.render("signin",{mes:""});
+    res.render("sign",{mes:""});
 })
 
 app.post("/signin",function(req,res){
@@ -236,18 +229,18 @@ app.post("/signin",function(req,res){
                     res.redirect("/admin")
                 }
                 else{
-                    res.render("signin",{mes:"password"});
+                    res.render("sign",{mes:"password"});
                 }
             }
             else{
-                res.render("signin",{mes:"username"});
+                res.render("sign",{mes:"username"});
             }
         }
     })
 })
 
 app.get("/signup",function(req,res){
-    res.render("signup",{mes:""});
+    res.render("sign",{mes:""});
 })
 
 app.post("/signup",function(req,res){
@@ -258,7 +251,7 @@ app.post("/signup",function(req,res){
         }
         else{
             if(found){
-                res.render("signup",{mes:"taken"});
+                res.render("sign",{mes:"taken"});
             }
             else{
                 const NewUser=new User({
@@ -382,10 +375,6 @@ app.post("/deletepat",function(req,res){
             res.redirect("/admin");
         }
     })
-})
-
-app.get("/temp",function(req,res){
-    res.render("temp");
 })
 
 app.listen(port,function(){

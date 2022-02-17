@@ -208,7 +208,7 @@
 .admiss-head{
     margin-left: 40%;
 }
-table {
+/* table {
     border: 2px solid rgba(0, 0, 0, 0.514);
 }
 th ,td{
@@ -217,31 +217,28 @@ th ,td{
 }
 .table{
     padding: 0 10% 0 10%;
-}
+} */
 
 /* admissionDet , ambulanceDet */
-.head:hover{
+/* .head:hover{
     background-color: rgba(102, 4, 4, 0.877);
-    /* color: white; */
     cursor: pointer;
 }
 
-/* admissionDet , ambulanceDet */
 .data:hover{
     background-color: rgb(24, 24, 95);
     color: #f4f6f8;
     cursor: pointer;
 }
 
-/* admissionDet , ambulanceDet */
 
 .admiss-table{
     text-align: center;
     font-size: 130%;
-}
-table tr:nth-child(even),th{background-color: #d8d8d8;}
+} */
+/* table tr:nth-child(even),th{background-color: #d8d8d8;}
 
-table tr:hover {background-color: #ddd;}
+table tr:hover {background-color: #ddd;} */
 /* model */
 .dltMod{
     width:130%;

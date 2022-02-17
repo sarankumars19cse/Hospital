@@ -10,7 +10,10 @@ box-sizing:border-box}
 
 body,html{
 height:100%;
-font-family:sans-serif}
+font-family:sans-serif;
+background: rgb(71,89,189);
+background: linear-gradient(90deg, rgba(71,89,189,1) 0%, rgba(118,9,121,1) 82%);
+}
 
 a{
 margin:0;
@@ -60,16 +63,12 @@ border:none!important}
 
 .limiter{
 width:100%;
-margin:0 auto}
+/* margin:0 auto; */
+}
 
 .container-table100{
 width:100%;
 min-height:100vh;
-background:#c850c0;
-background:-webkit-linear-gradient(45deg,#4158d0,#c850c0);
-background:-o-linear-gradient(45deg,#4158d0,#c850c0);
-background:-moz-linear-gradient(45deg,#4158d0,#c850c0);
-background:linear-gradient(45deg,#4158d0,#c850c0);
 display:-webkit-box;
 display:-webkit-flex;
 display:-moz-box;
@@ -78,10 +77,15 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-wrap:wrap;
-padding:33px 30px}
+padding:0 30px 33px 30px
+} 
 
 .wrap-table100{
 width:1170px}
+.table100{
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 table{
 border-spacing:1;
@@ -97,14 +101,19 @@ table *{
 position:relative}
 
 table td,table th{
-padding-left:8px}
-
+font-size: 150%;
+padding-left:8px
+}
+table th{
+    font-size: 200%;
+}
 table thead tr{
 height:60px;
 background:#36304a}
 
 table tbody tr{
-height:50px}
+height:80px
+}
 
 table tbody tr:last-child{
 border:0}
@@ -144,26 +153,31 @@ background-color:#f5f5f5;
 cursor:pointer}
 
 .column1{
-width:260px;
+width:300px;
+height: 80px;
 padding-left:40px}
 
 .column2{
-width:160px}
+width:250px
+}
 
 .column3{
-width:245px}
+width:250px}
 
 .column4{
-width:110px;
-text-align:right}
+width:200px;}
 
 .column5{
-width:170px;
-text-align:right}
+width:200px;}
 
 .column6{
+width:200px;}
+
+.column7{
+width:200px;}
+
+.column8{
 width:222px;
-text-align:right;
 padding-right:62px}
 
 @media screen and (max-width:992px){
@@ -199,22 +213,28 @@ left:30px;
 top:0}
 
 table tbody tr td:nth-child(1):before{
-content:"Date"}
+content:"Admission no."}
 
 table tbody tr td:nth-child(2):before{
-content:"Order ID"}
+content:"Admission Date"}
 
 table tbody tr td:nth-child(3):before{
-content:"Name"}
+content:"Patient Name"}
 
 table tbody tr td:nth-child(4):before{
-content:"Price"}
+content:"Patient Age"}
 
 table tbody tr td:nth-child(5):before{
-content:"Quantity"}
+content:"Date of Birth"}
 
 table tbody tr td:nth-child(6):before{
-content:"Total"}
+content:"Patient Address"}
+
+table tbody tr td:nth-child(7):before{
+content:"Purpose of Admission"}
+
+table tbody tr td:nth-child(8):before{
+content:"Attender Name"}
 
 .column4,.column5,.column6{
 text-align:left}
@@ -233,7 +253,11 @@ padding-left:15px;
 padding-right:15px}
 
 }
-.table1{
-    display: none;
+.cont1-head{
+    padding: 6% 0 0 2%;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    color: rgb(95, 23, 23);
 }
-
+.admiss-head{
+    margin-left: 40%;
+}

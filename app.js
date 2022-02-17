@@ -384,6 +384,10 @@ app.post("/deletepat",function(req,res){
     })
 })
 
+app.get("/temp",function(req,res){
+    res.render("temp");
+})
+
 app.listen(port,function(){
     console.log("app is running in the browser");
 })

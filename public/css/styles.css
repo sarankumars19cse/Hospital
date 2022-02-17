@@ -234,6 +234,7 @@ th ,td{
 }
 
 /* admissionDet , ambulanceDet */
+
 .admiss-table{
     text-align: center;
     font-size: 130%;
@@ -241,3 +242,18 @@ th ,td{
 table tr:nth-child(even),th{background-color: #d8d8d8;}
 
 table tr:hover {background-color: #ddd;}
+/* model */
+.dltMod{
+    width:130%;
+}
+.yesNo{
+    margin-right: 10%;
+}
+.no{
+    padding-right:15%;
+    padding-left:15%;
+}
+.yes{
+    padding-right:15%;
+    padding-left:15%;
+}

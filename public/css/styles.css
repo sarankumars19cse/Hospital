@@ -206,43 +206,11 @@
     color: black;
 }
 
-
-
 /* abulanceDet , admissionDet , admin */
 .admiss-head{
     margin-left: 40%;
 }
-/* table {
-    border: 2px solid rgba(0, 0, 0, 0.514);
-}
-th ,td{
-    border: 2px solid rgba(126, 124, 124, 0.514);
-    width: 10%;
-}
-.table{
-    padding: 0 10% 0 10%;
-} */
 
-/* admissionDet , ambulanceDet */
-/* .head:hover{
-    background-color: rgba(102, 4, 4, 0.877);
-    cursor: pointer;
-}
-
-.data:hover{
-    background-color: rgb(24, 24, 95);
-    color: #f4f6f8;
-    cursor: pointer;
-}
-
-
-.admiss-table{
-    text-align: center;
-    font-size: 130%;
-} */
-/* table tr:nth-child(even),th{background-color: #d8d8d8;}
-
-table tr:hover {background-color: #ddd;} */
 /* model */
 .dltMod{
     width:130%;
@@ -272,4 +240,9 @@ table tr:hover {background-color: #ddd;} */
 }
 .signb{
     background-color: rgba(71,89,189,1);
+}
+
+.alert{
+    margin-left: 15%;
+    margin-right: 15%;
 }

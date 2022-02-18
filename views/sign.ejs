@@ -51,22 +51,42 @@
       </ul>
     </div>
   </nav>
-  <div class="text-center" style="margin-top: 5%;">
+  <div class="alert">
+  <% if(mes == "taken") { %>
+    <div class="popup mb-2" id="popupmsgSus">
+      <button type="button" class="btn btn-danger btn-block message_btn pt-2 pb-2" onclick="messageHide()">
+  <div class="text-right">
+      <i class="far fa-times-circle text-light float-right"></i>
+  </div>
+  Username Already taken!!
+</button>
+  </div>
+  <% } else if(mes == "username") {%>
+    <div class="popup mb-2" id="popupmsgSus">
+      <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
+  <div class="text-right">
+      <i class="far fa-times-circle text-light float-right"></i>
+  </div>
+  Incorrect Username!!
+</button>
+  </div>
+  <% } else if(mes == "password"){%>
+    <div class="popup mb-2" id="popupmsgSus">
+      <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
+  <div class="text-right">
+      <i class="far fa-times-circle text-light float-right"></i>
+  </div>
+  Incorrect Password!!
+</button>
+  </div>
+  <% } %>
+  </div>
+  <div class="text-center" style="margin-top: 3%;">
     <button class="btn btn-lg mr-4 pl-5 pr-5 signbtn signb" id="up" onclick="signup()">SignUp</button>
     <button class="btn btn-lg ml-4 pl-5 pr-5 signbtn" id="in" onclick="signin()">SignIn</button>
   </div>
   <div class="sign-up" style="text-align: center;" id="signup">
     <h3 style="color: aliceblue;font-family: 'Gideon Roman', cursive;" class="mb-3">SIGN UP</h3>
-    <% if(mes == "taken") { %>
-      <div class="popup mb-2" id="popupmsgSus">
-        <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-    <div class="text-right">
-        <i class="far fa-times-circle text-light float-right"></i>
-    </div>
-    Username Already taken!!
-  </button>
-    </div>
-    <% } %>
           <form action="/signup" method="POST">
             <input required type="text" class="form-control" placeholder="Username" name="user">
             <input required type="password" class="form-control" placeholder="Password" name="pass">
@@ -79,25 +99,6 @@
   </div>
   <div class="sign-up hide" style="text-align: center;" id="signin">
     <h3 style="color: aliceblue;font-family: 'Gideon Roman', cursive;" class="mb-3">SIGN IN</h3>
-    <% if(mes == "username") { %>
-      <div class="popup mb-2" id="popupmsgSus">
-        <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-    <div class="text-right">
-        <i class="far fa-times-circle text-light float-right"></i>
-    </div>
-    Incorrect Username!!
-  </button>
-    </div>
-    <% } else if(mes == "password"){%>
-      <div class="popup mb-2" id="popupmsgSus">
-        <button type="button" class="btn btn-danger btn-block message_btn" onclick="messageHide()">
-    <div class="text-right">
-        <i class="far fa-times-circle text-light float-right"></i>
-    </div>
-    Incorrect Password!!
-  </button>
-    </div>
-    <% } %>
     <form action="/signin" method="POST">
     <input required type="text" class="form-control" placeholder="Username" name="user">
     <input required type="password" class="form-control" placeholder="Password" name="pass">

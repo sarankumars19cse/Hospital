@@ -17,6 +17,11 @@
 
     <!-- fonts -->
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@1,300&display=swap" rel="stylesheet">
+
 
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,7 +62,7 @@
     <!-- <a href="/admissionDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Admission Details</button></a> -->
       <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Ambulance Details</h2>
       </div>
-      <% if(NoOfEntries != 0) { %>
+      <% if(NoOfEntries > 0) { %>
         <div class="table100 pb-5">
         <table>
         <thead>
@@ -93,7 +98,7 @@
                   <div class="modal-content text-center dltMod">
                     <!--Header-->
                     <div class="modal-header d-flex justify-content-center bg-danger">
-                      <p class="heading pt-2 pb-2" style="color: white;font-size: 140%;"><b>Are you sure You want to delete?</b></p>
+                      <p class="heading pt-3 pb-3" style="color: white;font-size: 140%;font-family: 'Source Serif 4', sans-serif;"><b>Are you sure You want to delete?</b></p>
                     </div>
 
                     <!--Body-->

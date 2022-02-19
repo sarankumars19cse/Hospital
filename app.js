@@ -295,13 +295,13 @@ app.get("/admissionDet",function(req,res)
         f.forEach((val) => {
             NoOfEntries++;
         })
+        Admission.find({},function(e,found){
+            if(!e)
+            {
+                res.render("admissionDet",{found:found,admiss_no:0,sno:1,count:count,NoOfEntries:NoOfEntries});
+            }
+        })
     }) 
-    Admission.find({},function(e,found){
-                if(!e)
-                {
-                    res.render("admissionDet",{found:found,admiss_no:0,sno:1,count:count,NoOfEntries:NoOfEntries});
-                }
-            })
 })
 app.get("/ambulanceDet",function(req,res)
 {
@@ -313,68 +313,69 @@ app.get("/ambulanceDet",function(req,res)
             f.forEach((val) => {
                 NoOfEntries++;
             })
+            Ambulance.find({},function(e,found1){
+                        if(!e)
+                        {
+                            res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries});
+                        }
+                    })
         })  
-    Ambulance.find({},function(e,found1){
-                if(!e)
-                {
-                    res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries});
-                }
-            })
         }
 })
 
 app.get("/admin",function(req,res){
     var NoOfEntries = 0;
-    Admission.find({},function(e,f){
-        f.forEach((val) => {
-            NoOfEntries++;
-        })
-    }) 
     var current = new Date();
     var date = current.getDate();
     var month = current.getMonth()+1;
     var year = current.getFullYear();
-    if(count == 0)
-        res.redirect("/signin");
-    else{
-    Admission.find({},function(e,found){
-        if(!e)
-        {
-            res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries});
-        }
-    })
-}
-})
-
-app.post("/patient_det",function(req,res){
-    var NoOfEntries=0;
     Admission.find({},function(e,f){
         f.forEach((val) => {
             NoOfEntries++;
         })
-    }) 
-    var admiss_no = req.body.admiss_no;
-    Admission.find({},function(e,found){
-        if(!e)
+        if(count == 0)
+            res.redirect("/signin");
+        else
         {
-            res.render("admissionDet",{found:found,admiss_no:admiss_no,sno:1,count:count,NoOfEntries:NoOfEntries});
-        }
-    })
+            Admission.find({},function(e,found){
+                if(!e)
+                {
+                    res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries});
+                }
+        })
+    }
+    }) 
+})
+
+app.post("/patient_det",function(req,res){
+    var NoOfEntries=0;
+    var admiss_no = req.body.admiss_no;
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+        Admission.find({},function(e,found){
+            if(!e)
+            {
+                res.render("admissionDet",{found:found,admiss_no:admiss_no,sno:1,count:count,NoOfEntries:NoOfEntries});
+            }
+        })
+    }) 
 })
 app.post("/room_det",function(req,res){
     var NoOfEntries=0;
+    var room_no = req.body.admiss_no;
     room.find({},function(e,f){
         f.forEach((val) => {
             NoOfEntries++;
         })
+        room.find({},function(e,found){
+            if(!e)
+            {
+                res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries,admiss_no:room_no});  
+            }
+        })
     }) 
-    var room_no = req.body.admiss_no;
-    room.find({},function(e,found){
-        if(!e)
-        {
-            res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries,admiss_no:room_no});  
-        }
-    })
 })
 
 app.post("/deleteamb",function(req,res){
@@ -384,42 +385,42 @@ app.post("/deleteamb",function(req,res){
         f.forEach((val) => {
             NoOfEntries++;
         })
+        Ambulance.deleteOne({_id:id},function(e,f){
+            if(!e)
+            {
+                Ambulance.find({},function(e,found1){
+                    if(!e)
+                    {
+                        res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries-1});
+                    }
+                })
+            }
+        })
     }) 
-    Ambulance.deleteOne({_id:id},function(e,f){
-        if(!e)
-        {
-            Ambulance.find({},function(e,found1){
-                if(!e)
-                {
-                    res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries});
-                }
-            })
-        }
-    })
 })
 app.post("/deletepat",function(req,res){
     var NoOfEntries = 0;
-    Admission.find({},function(e,f){
-        f.forEach((val) => {
-            NoOfEntries++;
-        })
-    }) 
     var current = new Date();
     var date = current.getDate();
     var month = current.getMonth()+1;
     var year = current.getFullYear();
     var id = req.body.id;
-    Admission.deleteOne({admission_no:id},function(e,f){
-        if(!e)
-        {
-            Admission.find({},function(e,found){
-                if(!e)
-                {
-                    res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries});
-                }
-            })
-        }
-    })
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+        Admission.deleteOne({admission_no:id},function(e,f){
+            if(!e)
+            {
+                Admission.find({},function(e,found){
+                    if(!e)
+                    {
+                        res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries-1});
+                    }
+                })
+            }
+        })
+    }) 
 })
 
 app.get("/roomDetails",function(req,res){
@@ -428,11 +429,11 @@ app.get("/roomDetails",function(req,res){
         f.forEach((val) => {
             NoOfEntries++;
         })
+        room.find({},function(e,found){
+            if(!e)
+                res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries-1,admiss_no:0});  
+        })
     }) 
-    room.find({},function(e,found){
-        if(!e)
-            res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries,admiss_no:0});  
-    })
 })
 
 app.get("/roomEntry",function(req,res){
@@ -463,7 +464,6 @@ app.post("/roomEntry",function(req,res){
             found.forEach(function(val){
                 c++;
     })
-})
     if(c<=10){
     room.findOne({roomNo:roomNo},function(e,found){
         if(e)
@@ -523,6 +523,7 @@ else{
     })
 }
 })
+})
 
 app.post("/deleteRoom",function(req,res){
     var roomno = req.body.id;
@@ -538,17 +539,17 @@ app.get("/adminRoom",function(req,res){
         f.forEach((val) => {
             NoOfEntries++;
         })
+        if(count == 0)
+            res.redirect("/signin");
+        else{
+        room.find({},function(e,found){
+            if(!e)
+            {
+                res.render("adminRoom",{found:found,no:1,NoOfEntries:NoOfEntries});
+            }
+        })
+    }
     }) 
-    if(count == 0)
-        res.redirect("/signin");
-    else{
-    room.find({},function(e,found){
-        if(!e)
-        {
-            res.render("adminRoom",{found:found,no:1,NoOfEntries:NoOfEntries});
-        }
-    })
-}
 })
 
 app.listen(port,function(){

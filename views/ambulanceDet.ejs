@@ -8,6 +8,7 @@
     <!-- bootstrap links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- BootStrap Script links -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -37,13 +38,13 @@
           <a class="nav-link mr-3 ml-2" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
+          <a class="nav-link mr-3 ml-2 active" href="/ambulanceDet">AMBULANCE ENTRIES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
+          <a class="nav-link mr-3 ml-2" href="/roomEntry">ROOM ENTRIES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2 active" href="/admin">ADMIN</a>
+          <a class="nav-link mr-3 ml-2" href="/admin">ADMISSION ENTRIES</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
@@ -53,71 +54,78 @@
   </nav>
   <div class="limiter">
     <div class="pb-5">
-    <a href="/admissionDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Admission Details</button></a>
+    <!-- <a href="/admissionDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Admission Details</button></a> -->
       <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Ambulance Details</h2>
       </div>
-<div class="table100 pb-5">
-<table>
-<thead>
-<tr class="table100-head">
-<th class="column1">Sno.</th>
-<th class="column2">Patient Name</th>
-<th class="column3">From</th>
-<th class="column4">To</th>
-<th class="column5">Date</th>
-<th class="column6">No. of Attenders allowed</th>
-<th class="column7">Attender Name</th>
-<th class="column8">Status</th>
-</tr>
-</thead>
-<tbody>
-  <% found.forEach((val) => { %>
-    <tr class="data">
-      <form action="/deleteamb" method="post">
-        <td class="column1"><%= sno++ %></td>
-        <td class="column2"><%= val.patientName %></td>
-        <td class="column3"><%= val.from %></td>
-        <td class="column4"><%= val.to %></td>
-        <td class="column5"><%= val.time %></td>
-        <td class="column6"><%= val.attenders %></td>
-        <td class="column7"><%= val.attenderName %></td>
-        <input type="hidden" name="id" value="<%= val._id %>">
-        <td><button type="button" class="btn" data-toggle="modal" data-target="#modalConfirmDelete"><i class="fa-solid fa-trash-can"></i></button></td>
-        <!--Modal: modalConfirmDelete-->
-  <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
-    <!--Content-->
-    <div class="modal-content text-center dltMod">
-      <!--Header-->
-      <div class="modal-header d-flex justify-content-center bg-danger">
-        <p class="heading pt-2 pb-2" style="color: white;font-size: 140%;"><b> Are you sure You want to delete?</b></p>
-      </div>
+      <% if(NoOfEntries != 0) { %>
+        <div class="table100 pb-5">
+        <table>
+        <thead>
+        <tr class="table100-head">
+        <th class="column1">Sno.</th>
+        <th class="column2">Patient Name</th>
+        <th class="column3">From</th>
+        <th class="column4">To</th>
+        <th class="column5">Date</th>
+        <th class="column6">No. of Attenders allowed</th>
+        <th class="column7">Attender Name</th>
+        <th class="column8">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% found.forEach((val) => { %>
+            <tr class="data">
+              <form action="/deleteamb" method="post">
+                <td class="column1"><%= sno++ %></td>
+                <td class="column2"><%= val.patientName %></td>
+                <td class="column3"><%= val.from %></td>
+                <td class="column4"><%= val.to %></td>
+                <td class="column5"><%= val.time %></td>
+                <td class="column6"><%= val.attenders %></td>
+                <td class="column7"><%= val.attenderName %></td>
+                <input type="hidden" name="id" value="<%= val._id %>">
+                <td><button type="button" data-toggle="modal" data-target="#modalConfirmDelete"><i class="fa-solid fa-trash-can"></i></button></td>
+                <!--Modal: modalConfirmDelete-->
+                <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+                  <!--Content-->
+                  <div class="modal-content text-center dltMod">
+                    <!--Header-->
+                    <div class="modal-header d-flex justify-content-center bg-danger">
+                      <p class="heading pt-2 pb-2" style="color: white;font-size: 140%;"><b>Are you sure You want to delete?</b></p>
+                    </div>
 
-      <!--Body-->
-      <div class="modal-body mt-2 mb-2">
+                    <!--Body-->
+                    <div class="modal-body mt-2 mb-2"> 
 
-        <i class="fas fa-times fa-5x animate__animated animate__rotateIn" style="color: red;"></i>
+                      <i class="fas fa-times fa-5x animate__animated animate__rotateIn" style="color: red;"></i>
 
-      </div>
+                    </div>
 
-      <!--Footer-->
-      <div class="modal-footer flex-center mt-2 mb-2 yesNo">
-        <!-- <a href="" class="btn  btn-outline-danger">Yes</a> -->
-        <button class="btn btn-outline-danger btn-lg yes" type="submit">Yes</button> 
-        <a type="button" class="btn btn-danger waves-effect btn-lg no ml-lg-5" data-dismiss="modal" style="color: white;">No</a>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-  </div>
-  <!--Modal: modalConfirmDelete-->
-      </form>
-    </tr> 
-    <% }) %> 
-</tbody>
-</table>
-</div>
+                    <!--Footer-->
+                    <div class="modal-footer flex-center mt-2 mb-2 yesNo">
+                      <!-- <a href="" class="btn  btn-outline-danger">Yes</a> -->
+                      <button class="btn btn-outline-danger btn-lg yes" type="submit">Yes</button> 
+                      <a type="button" class="btn btn-danger waves-effect btn-lg no ml-lg-5" style="color: white;" data-dismiss="modal">No</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+                </div>
+                <!--Modal: modalConfirmDelete-->
+              </form>
+            </tr> 
+            <% }) %> 
+        </tbody>
+        </table>
+        </div>
+      <% } else { %>
+        <div style="color: white;margin-top: 8%;" class="text-center">
+          <div><i class="fa-solid fa-folder-open" style="font-size: 700%;"></i></div>
+          <div class="mt-3 fa-2x"><span> NO DETAILS FOUND </span></div>
+        </div>  
+        <% } %>  
 </div>
 </body>
 </html>

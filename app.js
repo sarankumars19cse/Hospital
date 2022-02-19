@@ -45,12 +45,23 @@ const ambulanceSchema=new mongoose.Schema({
 
 const Ambulance=new mongoose.model("ambulance",ambulanceSchema)
 
+const roomSchema = new mongoose.Schema({
+    roomNo:Number,
+    admissDate:String,
+    name:String,
+    age:Number,
+    place:String,
+    attenderName:String
+})
+
+const room = new mongoose.model("room",roomSchema)
+
 let count=0;
 let uname;
 let admissno = 0;
 
 app.get("/",function(req,res){
-    res.render("index");
+    res.render("index",{count:count});
 })
 
 app.get("/admission",function(req,res){
@@ -159,7 +170,7 @@ app.post("/admission",function(req,res){
     var c = 0;
     Admission.find({},function(e,found){
         found.forEach((val) =>{
-                c++;
+                c=c+1;
         } )
         const NewAdmission=new Admission({
             // admission_no:max,
@@ -279,28 +290,46 @@ app.get("/logout",function(req,res){
 
 app.get("/admissionDet",function(req,res)
 {
+    var NoOfEntries=0;
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
     Admission.find({},function(e,found){
                 if(!e)
                 {
-                    res.render("admissionDet",{found:found,admiss_no:0,sno:1});
+                    res.render("admissionDet",{found:found,admiss_no:0,sno:1,count:count,NoOfEntries:NoOfEntries});
                 }
             })
 })
 app.get("/ambulanceDet",function(req,res)
 {
+    var NoOfEntries = 0;
     if(count == 0)
         res.redirect("/signin");
-    else{    
+    else{  
+        Ambulance.find({},function(e,f){
+            f.forEach((val) => {
+                NoOfEntries++;
+            })
+        })  
     Ambulance.find({},function(e,found1){
                 if(!e)
                 {
-                    res.render("ambulanceDet",{found:found1,sno:1});
+                    res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries});
                 }
             })
         }
 })
 
 app.get("/admin",function(req,res){
+    var NoOfEntries = 0;
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
     var current = new Date();
     var date = current.getDate();
     var month = current.getMonth()+1;
@@ -311,70 +340,215 @@ app.get("/admin",function(req,res){
     Admission.find({},function(e,found){
         if(!e)
         {
-            res.render("admin",{found:found,date:date,month:month,year:year,no:1});
+            res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries});
         }
     })
 }
 })
 
 app.post("/patient_det",function(req,res){
+    var NoOfEntries=0;
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
     var admiss_no = req.body.admiss_no;
     Admission.find({},function(e,found){
         if(!e)
         {
-            res.render("admissionDet",{found:found,admiss_no:admiss_no,sno:1});
+            res.render("admissionDet",{found:found,admiss_no:admiss_no,sno:1,count:count,NoOfEntries:NoOfEntries});
+        }
+    })
+})
+app.post("/room_det",function(req,res){
+    var NoOfEntries=0;
+    room.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
+    var room_no = req.body.admiss_no;
+    room.find({},function(e,found){
+        if(!e)
+        {
+            res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries,admiss_no:room_no});  
         }
     })
 })
 
-// app.get("/find",function(req,res){
-//     Admission.find({},function(e,found){
-//         if(!e)
-//         {
-//             res.render("admissionDet",{found:found});
-//         }
-//     })
-//     // res.redirect("/admissionDet");
-// })
-
-// app.get("/medical",function(req,res){
-//     res.render("medical");
-// })
-
-// app.post("/medical",function(req,res){
-//     const NewMedical=new Medical({
-//         username:uname,
-//         doctor_name:req.body.doctorName,
-//         address:req.body.hospitalAddress
-//     })
-//     NewMedical.save(function(e){
-//         if(e){
-//             console.log(e)
-//         }
-//         else{
-//             alert("Record saved sucessfully")
-//             res.redirect("/medical")
-//         }
-//     })
-// })
-
 app.post("/deleteamb",function(req,res){
     var id = req.body.id;
+    var NoOfEntries = 0;
+    Ambulance.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
     Ambulance.deleteOne({_id:id},function(e,f){
         if(!e)
         {
-            res.redirect("/ambulanceDet");
+            Ambulance.find({},function(e,found1){
+                if(!e)
+                {
+                    res.render("ambulanceDet",{found:found1,sno:1,NoOfEntries:NoOfEntries});
+                }
+            })
         }
     })
 })
 app.post("/deletepat",function(req,res){
+    var NoOfEntries = 0;
+    Admission.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
+    var current = new Date();
+    var date = current.getDate();
+    var month = current.getMonth()+1;
+    var year = current.getFullYear();
     var id = req.body.id;
     Admission.deleteOne({admission_no:id},function(e,f){
         if(!e)
         {
-            res.redirect("/admin");
+            Admission.find({},function(e,found){
+                if(!e)
+                {
+                    res.render("admin",{found:found,date:date,month:month,year:year,no:1,NoOfEntries:NoOfEntries});
+                }
+            })
         }
     })
+})
+
+app.get("/roomDetails",function(req,res){
+    var NoOfEntries = 0;
+    room.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
+    room.find({},function(e,found){
+        if(!e)
+            res.render("roomDetails",{found:found,sno:1,count:count,NoOfEntries:NoOfEntries,admiss_no:0});  
+    })
+})
+
+app.get("/roomEntry",function(req,res){
+    var arr=[];
+    if(count==1)
+    {
+        room.find({},function(e,found){
+            if(!e)
+            {
+                var i=0;
+                found.forEach((val) => {
+                    arr[i++] = val.roomNo;
+                })
+                res.render("roomEntry",{mes:"",found:arr});
+            }
+        })
+    }
+    else
+        res.redirect("/signin");    
+})
+
+app.post("/roomEntry",function(req,res){
+    var arr=[];
+    const roomNo=req.body.roomNo;
+    var c=0;
+    room.find({},function(e,found){
+        if(!e)
+            found.forEach(function(val){
+                c++;
+    })
+})
+    if(c<=10){
+    room.findOne({roomNo:roomNo},function(e,found){
+        if(e)
+        {
+            console.log("Error occured during find room no.");
+        }
+        if(found)
+        {
+            room.find({},function(e,found1){
+                if(!e)
+                {
+                    var i=0;
+                    found1.forEach((val) => {
+                        arr[i++] = val.roomNo;
+                    })
+                    res.render("roomEntry",{mes:"found",found:arr});
+                }
+            })
+        }
+        else{
+            const Room = new room({
+                roomNo:roomNo,
+                admissDate:req.body.admissDate,
+                name:req.body.patientName,
+                age:req.body.age,
+                place:req.body.place,
+                attenderName:req.body.attenderName
+            })
+            Room.save(function(e){
+                if(!e)
+                {
+                    room.find({},function(e,found1){
+                        if(!e)
+                        {
+                            var i=0;
+                            found1.forEach((val) => {
+                                arr[i++] = val.roomNo;
+                            })
+                            res.render("roomEntry",{mes:"sucess",found:arr});
+                        }
+                    })
+                }
+            })
+        }
+    })
+}
+else{
+    room.find({},function(e,found1){
+        if(!e)
+            {
+                var i=0;
+                found1.forEach((val) => {
+                    arr[i++] = val.roomNo;
+                })
+                res.render("roomEntry",{mes:"filled",found:arr});
+            }
+    })
+}
+})
+
+app.post("/deleteRoom",function(req,res){
+    var roomno = req.body.id;
+    room.deleteOne({roomNo:roomno},function(e,f){
+        if(!e)
+            res.redirect("/adminRoom");
+    })
+})
+
+app.get("/adminRoom",function(req,res){
+    var NoOfEntries = 0;
+    room.find({},function(e,f){
+        f.forEach((val) => {
+            NoOfEntries++;
+        })
+    }) 
+    if(count == 0)
+        res.redirect("/signin");
+    else{
+    room.find({},function(e,found){
+        if(!e)
+        {
+            res.render("adminRoom",{found:found,no:1,NoOfEntries:NoOfEntries});
+        }
+    })
+}
 })
 
 app.listen(port,function(){

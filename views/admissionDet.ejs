@@ -26,6 +26,7 @@
 
 </head>
 <body class="bod">
+  <% if(count == 0) { %>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
     <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,25 +38,56 @@
           <a class="nav-link mr-3 ml-2" href="/">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
+          <a class="nav-link mr-3 ml-2 active" href="/admission">ADMISSION</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2 active" href="/admin">ADMIN</a>
+          <a class="nav-link mr-3 ml-2" href="/roomDetails">ROOM DETAILS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
+          <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
+        </li> -->
       </ul>
     </div>
   </nav>
+  <% } else { %>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+      <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/ambulanceDet">AMBULANCE ENTRIES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/roomEntry">ROOM ENTRY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2 active" href="/admissionDet">ADMISSION DETAILS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <% } %>
   <div class="limiter">
     <div class="pb-5">
-    <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a>
+    <!-- <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a> -->
       <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Admission Details</h2>
       </div>
+      <% if(NoOfEntries != 0) { %>
 <div class="table100 pb-5">
 <table>
 <thead>
@@ -109,6 +141,12 @@
 </tbody>
 </table>
 </div>
+<% } else { %>
+  <div style="color: white;margin-top: 8%;" class="text-center">
+    <div><i class="fa-solid fa-folder-open" style="font-size: 700%;"></i></div>
+    <div class="mt-3 fa-2x"><span> NO DETAILS FOUND </span></div>
+  </div>  
+  <% } %>  
 </div>
 </body>
 </html>

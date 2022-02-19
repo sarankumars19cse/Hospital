@@ -29,27 +29,59 @@
     
 </head>
 <body style="overflow-x: hidden;" class="bod">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+  <% if(count == 0) { %>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+      <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2 active" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/roomDetails">ROOM DETAILS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <% } else { %>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(24, 24, 95);">
+        <a class="navbar-brand" href="#" style="font-family: 'Spartan', sans-serif;"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link mr-3 active ml-2" href="/">HOME</a>
+              <a class="nav-link mr-3 ml-2 active" href="/">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/admission">ADMISSION</a>
+              <a class="nav-link mr-3 ml-2" href="/ambulanceDet">AMBULANCE ENTRIES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/ambulance">AMBULANCE</a>
+              <a class="nav-link mr-3 ml-2" href="/roomEntry">ROOM ENTRY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
+              <a class="nav-link mr-3 ml-2" href="/admin">ADMISSION DETAILS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
             </li>
           </ul>
         </div>
       </nav>
+      <% } %>
       <div class="whl-index"> 
       <div class="hospital-name"><i class="fas fa-hospital"></i> KARUR  HEALTH CARE </div>
       <div style="margin:0 5%;">
@@ -89,7 +121,7 @@
       </div>
       <div class="whl-cntn">
         <div class="index-ul">
-          <h2 class="cont1-head">Obstetrics (Pregnancy & Child Birth) we have</h2>
+          <h2 class="cont2-head">Obstetrics (Pregnancy & Child Birth) we have</h2>
           <hr>
           <ul>
             <li>Senior consultants attending to emergencies 24*7</li>
@@ -106,7 +138,7 @@
             <li>We are attached to ‘NEOLIFE’ – neonatal intensive care unit for care of pretexm babies & sick new</li> 
           </ul>
         </div> 
-        <h2 class="cont1-head">The Ultimate List of Medical Specialties and Subspecialties</h2>
+        <h2 class="cont2-head">The Ultimate List of Medical Specialties and Subspecialties</h2>
         <hr>
         <p class="cont1-para">The medical field is as expansive and multifaceted as the intricacies of the human body. Doctor specialties exist for each of these fields of medicine to serve the needs of a particular realm of care. But where should an aspiring doctor like yourself begin when finding a medical specialty?
 
@@ -115,14 +147,14 @@
           Your path to residency starts at St. George’s University. Are You In?
           
           If you’re already interested in a particular field of medicine, click on the corresponding link below to explore the options within that specialty.</p>
-          <h2 class="cont1-head">A COMPREHENSIVE LIST OF MEDICAL SPECIALTIES</h2>
+          <h2 class="cont2-head">A COMPREHENSIVE LIST OF MEDICAL SPECIALTIES</h2>
           <hr>
         <p class="cont1-para">Every medical specialist shares one common goal: to help patients get healthy or stay healthy. But each one has very specific skills and competencies that make them an integral member of the medical field. Learn more about each specialty and the subspecialties that fall underneath them.</p>
-        <h2 class="cont1-head">1. ALLERGY AND IMMUNOLOGY</h2>
+        <h2 class="cont2-head">1. ALLERGY AND IMMUNOLOGY</h2>
         <hr>
         <p class="cont1-para">Specialists in allergy and immunology work with both adult and pediatric patients suffering from allergies and diseases of the respiratory tract or immune system. They may help patients suffering from common diseases such as asthma, food and drug allergies, immune deficiencies, and diseases of the lung. Specialists in allergy and immunology can pursue opportunities in research, education, or clinical practice.</p>
 
-        <h2 class="cont1-head">2. ANESTHESIOLOGY</h2>
+        <h2 class="cont2-head">2. ANESTHESIOLOGY</h2>
         <hr>
         <p class="cont1-para">Anesthesiology is the branch of medicine dedicated to pain relief for patients before, during, and after surgery. The American Board of Anesthesiology outlines the following subspecialties within the field in the following areas of care:
         <ul class="cont1-para">
@@ -132,10 +164,10 @@
           <li>Pediatric anesthesiology</li>
           <li>Sleep medicine</li>
         </ul></p>
-        <h2 class="cont1-head">3. MEDICAL GENETICS</h2>
+        <h2 class="cont2-head">3. MEDICAL GENETICS</h2>
         <hr>
         <p class="cont1-para">A medical geneticist is a physician who treats hereditary disorders and diagnoses diseases that are caused by genetic defects. Medical geneticists may provide patients with therapeutic interventions and specialized counseling. They also educate patients and their families on their diagnoses and how to cope with their genetic disorder. Medical geneticists conduct cytogenetic, radiologic, and biochemical testing and scientific research in the field.</p>
-        <h2 class="cont1-head">WHICH MEDICAL FIELDS INTEREST YOU MOST?</h2>
+        <h2 class="cont2-head">WHICH MEDICAL FIELDS INTEREST YOU MOST?</h2>
         <hr>
         <p class="cont1-para">This long list of medical specialties and subspecialties shows the many options you have for making an impact in patients’ lives. Selecting a specialty that challenges you, aligns with your career goals, and provides your desired lifestyle are all important aspects you need to take into consideration.
 

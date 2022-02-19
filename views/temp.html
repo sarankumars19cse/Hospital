@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- BootStrap Script links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</head>
+<body>
+    
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Launch
+        modal</button>
+        
+        <!-- Modal: modalPoll -->
+        <div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Feedback request
+                    </p>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">×</span>
+                    </button>
+                </div>
+                
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+                        <p>
+                            <strong>Your opinion matters</strong>
+                        </p>
+                        <p>Have some ideas how to improve our product?
+                            <strong>Give us your feedback.</strong>
+                        </p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <!-- Radio -->
+                    <p class="text-center">
+                        <strong>Your rating</strong>
+                    </p>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" name="group1" type="radio" id="radio-179" value="option1" checked>
+                        <label class="form-check-label" for="radio-179">Very good</label>
+                    </div>
+                    
+                    <div class="form-check mb-4">
+            <input class="form-check-input" name="group1" type="radio" id="radio-279" value="option2">
+            <label class="form-check-label" for="radio-279">Good</label>
+        </div>
+        
+        <div class="form-check mb-4">
+            <input class="form-check-input" name="group1" type="radio" id="radio-379" value="option3">
+            <label class="form-check-label" for="radio-379">Mediocre</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" name="group1" type="radio" id="radio-479" value="option4">
+            <label class="form-check-label" for="radio-479">Bad</label>
+        </div>
+        <div class="form-check mb-4">
+            <input class="form-check-input" name="group1" type="radio" id="radio-579" value="option5">
+            <label class="form-check-label" for="radio-579">Very bad</label>
+        </div>
+        <!-- Radio -->
+        
+        <p class="text-center">
+            <strong>What could we improve?</strong>
+        </p>
+        <!--Basic textarea-->
+        <div class="md-form">
+            <textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"></textarea>
+            <label for="form79textarea">Your message</label>
+        </div>
+        
+    </div>
+    
+    <!--Footer-->
+    <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-primary waves-effect waves-light">Send
+            <i class="fa fa-paper-plane ml-1"></i>
+        </a>
+        <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+    </div>
+      </div>
+    </div>
+</div>
+<!-- Modal: modalPoll -->
+</body>
+</html>

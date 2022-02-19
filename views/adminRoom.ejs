@@ -46,7 +46,10 @@
           <a class="nav-link mr-3 ml-2" href="/roomEntry">ROOM ENTRY</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mr-3 ml-2 active" href="/admin">ADMISSION DETAILS</a>
+          <a class="nav-link mr-3 ml-2 active" href="/adminRoom">ROOM DETAILS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-3 ml-2" href="/admin">ADMISSION DETAILS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-3 ml-2" href="/logout">LOGOUT</a>
@@ -55,7 +58,7 @@
     </div>
   </nav>
   <!-- <a href="/ambulanceDet"><button class="btn btn-lg btn-primary float-right mr-4 mt-4"><i class="fas fa-bars"></i> View Ambulance Details</button></a> -->
-  <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Admission Details</h2>
+  <h2 class="cont1-head admiss-head" style="padding-top: 3%;color: white;">Room Details</h2>
   <hr>
   <% if(NoOfEntries != 0) { %>
   <div class="container">
@@ -63,9 +66,9 @@
         <% found.forEach((val) => { %>
         <div class="col-lg-6 col-sm-12 mt-3 mb-5">
             <div class="patient">
-              <form action="/deletepat" method="post">
-                <input type="hidden" name="id" value="<%= val.admission_no %>">
-                <h3 class="text-center p-3">Admission no : <%= no %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
+              <form action="/deleteRoom" method="post">
+                <input type="hidden" name="id" value="<%= val.roomNo %>">
+                <h3 class="text-center p-3">Room no : <%= no %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
                 <!--Modal: modalConfirmDelete-->
                   <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
@@ -97,16 +100,12 @@
                   <!--Modal: modalConfirmDelete-->
                 </form>
                 <div class="ml-5 det">
-                  <form action="/patient_det" method="post">
+                  <form action="/room_det" method="post">
                   <input type="hidden" name="admiss_no" value="<%= no++ %>">
-                    <div> Name : <%= val.p_name %></div>
+                    <div> Name : <%= val.name %></div>
                     <div> Age : <%= val.age %></div>
-                    <div> Purpose : <%= val.purpose %></div>
-                    <%if(date <= val.admis_date && month <= val.admis_month && year <= val.admis_year){%>
-                    <div> Status : <span style="color: green;"> Pending...</span></div>
-                    <%} else {%>
-                    <div> Status : <span style="color: red;"> Admission date ended...</span></div>
-                    <% } %>
+                    <div> place : <%= val.place %></div>
+                    <div> Attender Name : <%= val.attenderName %></div>
                     <div class="text-center"><button type="submit" class="btn btn-success">View Full Details</button></div>
                   </form>
                 </div>    

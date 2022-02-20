@@ -17,6 +17,13 @@ const userSchema=new mongoose.Schema({
 
 const User=new mongoose.model("user",userSchema)
 
+// const adminSchema = new mongoose.Schema({
+//     name:{type:String,default:"admin"},
+//     password:{type:String,default:"admin"}
+// })
+
+// const admin = new mongoose.model("admin",adminSchema);
+
 const admissionSchema=new mongoose.Schema({
     // admission_no:Number,
     admis_date:Number,
@@ -65,7 +72,7 @@ app.get("/",function(req,res){
 })
 
 app.get("/admission",function(req,res){
-    let c = 0;
+    let c = 1;
     Admission.find({},function(e,found){
         if(!e){
         found.forEach((val) =>{
@@ -167,7 +174,7 @@ app.post("/admission",function(req,res){
         }   
     }
     admissno++;
-    var c = 0;
+    var c = 1;
     Admission.find({},function(e,found){
         found.forEach((val) =>{
                 c=c+1;
@@ -190,7 +197,7 @@ app.post("/admission",function(req,res){
                 console.log(e)
             }
             else{
-                res.render("admission",{mes:"Success",admissNo:c});
+                res.render("admission",{mes:"Success",admissNo:c+1});
             }
         })
     })
@@ -283,6 +290,28 @@ app.post("/signup",function(req,res){
     })
 })
 
+app.get("/adminsign",function(req,res){
+    res.render("adminsign",{mes:""});
+})
+
+app.post("/adminsign",function(req,res){
+    var name = req.body.useradmin;
+    var pass = req.body.passadmin;
+    if(name == "admin")
+    {
+        if(pass == "admin")
+        {
+            res.redirect("/signin");
+        }
+        else{
+            res.render("adminsign",{mes:"password"})
+        }
+    }
+    else{
+        res.render("adminsign",{mes:"username"});
+    }
+})
+
 app.get("/logout",function(req,res){
     count=0;
     res.redirect("/signin");
@@ -291,6 +320,9 @@ app.get("/logout",function(req,res){
 app.get("/admissionDet",function(req,res)
 {
     var NoOfEntries=0;
+    if(count == 0)
+        res.redirect("/signin");
+    else{  
     Admission.find({},function(e,f){
         f.forEach((val) => {
             NoOfEntries++;
@@ -302,6 +334,7 @@ app.get("/admissionDet",function(req,res)
             }
         })
     }) 
+}
 })
 app.get("/ambulanceDet",function(req,res)
 {

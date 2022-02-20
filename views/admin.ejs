@@ -65,9 +65,9 @@
             <div class="patient">
               <form action="/deletepat" method="post">
                 <input type="hidden" name="id" value="<%= val.admission_no %>">
-                <h3 class="text-center p-3">Admission no : <%= no %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
+                <h3 class="text-center p-3">Admission no : <%= no %> <button type="button" class="btn float-right" data-toggle="modal" data-target="#modalConfirmDelete<%=val.admission_no%>" style="background:none;color: white;"><i class="fa-solid fa-2x fa-trash-can"></i></button></h3>
                 <!--Modal: modalConfirmDelete-->
-                  <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                  <div class="modal fade" id="modalConfirmDelete<%=val.admission_no%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                   aria-hidden="true">
                   <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
                     <!--Content-->

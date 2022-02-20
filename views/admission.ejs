@@ -47,12 +47,12 @@
               <a class="nav-link mr-3 ml-2" href="/roomDetails">ROOM DETAILS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3 ml-2" href="/admin">ADMIN</a>
+              <a class="nav-link mr-3 ml-2" href="/adminsign">ADMIN</a>
             </li>
           </ul>
         </div>
       </nav>
-      <a href="/admissionDet"><button class="btn btn-lg btn-outline-light float-right mr-4 admissButton"><i class="fas fa-bars"></i> View Admission Details</button></a>
+      <!-- <a href="/admissionDet"><button class="btn btn-lg btn-outline-light float-right mr-4 admissButton"><i class="fas fa-bars"></i> View Admission Details</button></a> -->
       <div class="admiss">
         <% if(mes == "Success") { %>
         <div class="popup" id="popupmsgSus">
@@ -67,7 +67,7 @@
         <h2 style="text-align: center;">ADMISSION</h2>
         <h5 style="text-align: center;">REGISTER TO BOOK YOUR ADMISSION</h5>
         <form action="/admission" method="POST">
-          <input type="text" placeholder="Admission No." class="form-control mt-3" value="Admission No : <%= admissNo+1 %>" readonly>
+          <input type="text" placeholder="Admission No." class="form-control mt-3" value="Admission No : <%= admissNo %>" readonly>
           <input required type="text" placeholder="Patient name" class="form-control mt-3" name="patientName">
           <input required type="number" placeholder="Age" class="form-control mt-3" name="age">
           <input required type="date" placeholder="Date of Birth" class="form-control mt-3" name="dob">
